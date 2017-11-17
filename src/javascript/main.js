@@ -26,11 +26,11 @@ function getData() {
 
 function createMarkov() {
     var text = document.querySelector("#inputfield").value.toLowerCase();
-    var start = Math.floor(Math.random() * text.length);
+    var start = 0;
     var currentGram = text.substr(start, ngramSize);
     var fullMarkov = currentGram;
 
-    for (var i = 0; i < markovSize; i++) {
+    for (var i = 0; i < text.length; i++) {
         if (data[currentGram]) {
             var rand = Math.floor(Math.random() * (data[currentGram].length - 1));
             var nextLetter = data[currentGram][rand];
